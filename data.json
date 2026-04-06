@@ -1,0 +1,68 @@
+[
+    {
+        "id": 1,
+        "fullName": "Sarah Tan",
+        "creatorName": "@sarah.explores",
+        "nicheCategories": ["Travel", "Lifestyle"],
+        "languages": ["English", "Malay"],
+        "bio": "I'm that girl who turns everyday moments into dreamy pastel aesthetics—think soft morning routines, cozy café corners, and budget-friendly home styling. Let's create something beautiful together!",
+        "profileImageUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=300&auto=format&fit=crop",
+        "tiktokLink": "https://tiktok.com/@sarah.explores",
+        "instagramLink": "https://instagram.com/sarah.explores"
+    },
+    {
+        "id": 2,
+        "fullName": "Ahmad Rizky",
+        "creatorName": "@rizkyeats",
+        "nicheCategories": ["Foodie"],
+        "languages": ["Malay"],
+        "bio": "Always hungry, always honest. Hunting down the best hidden gem restaurants and spicy food challenges across Malaysia. I keep it 100% real with my followers.",
+        "profileImageUrl": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=300&auto=format&fit=crop",
+        "tiktokLink": "https://tiktok.com/@rizkyeats",
+        "instagramLink": "https://instagram.com/rizkyeats"
+    },
+    {
+        "id": 3,
+        "fullName": "Chloe Wong",
+        "creatorName": "@chloe.styles",
+        "nicheCategories": ["Fashion", "Beauty"],
+        "languages": ["Mandarin", "English"],
+        "bio": "Serving looks and spilling the tea on skincare routines. I love thrifting and mixing high-end pieces with budget finds. Funny, sarcastic but warm!",
+        "profileImageUrl": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=300&auto=format&fit=crop",
+        "tiktokLink": "https://tiktok.com/@chloe.styles",
+        "instagramLink": "https://instagram.com/chloe.styles"
+    },
+    {
+        "id": 4,
+        "fullName": "Arif Rahman",
+        "creatorName": "@arif_fit",
+        "nicheCategories": ["Fitness", "Lifestyle"],
+        "languages": ["Mixed"],
+        "bio": "Sharing my weight loss journey and motivating others to get moving! Pickleball every weekend, and trying to balance healthy eating with my love for nasi lemak.",
+        "profileImageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=300&auto=format&fit=crop",
+        "tiktokLink": "https://tiktok.com/@arif_fit",
+        "instagramLink": "https://instagram.com/arif_fit"
+    },
+    {
+        "id": 5,
+        "fullName": "Maya Krishnan",
+        "creatorName": "@mayalaughs",
+        "nicheCategories": ["Entertainment"],
+        "languages": ["English"],
+        "bio": "Low-key chaotic and very real. I make skits about everyday Malaysian life that will make you say 'same'. I don't sugarcoat things!",
+        "profileImageUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=300&auto=format&fit=crop",
+        "tiktokLink": "https://tiktok.com/@mayalaughs",
+        "instagramLink": "https://instagram.com/mayalaughs"
+    },
+    {
+        "id": 6,
+        "fullName": "James Lee",
+        "creatorName": "@james.learns",
+        "nicheCategories": ["Education", "Others"],
+        "languages": ["English", "Mandarin"],
+        "bio": "Breaking down complex tech and finance topics into easy-to-understand bites. Let's learn something new together every day!",
+        "profileImageUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=300&auto=format&fit=crop",
+        "tiktokLink": "https://tiktok.com/@james.learns",
+        "instagramLink": "https://instagram.com/james.learns"
+    }
+]

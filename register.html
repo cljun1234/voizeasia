@@ -787,15 +787,12 @@
             };
 
             const creatorNameStr = document.getElementById('fullName').value || 'there';
-            const prompt = `You are a Bio Summary Writer, focus on creating only 1 variation of bio profile for Malaysia influencer based on the information provided by user. Detect user language and write the bio in the language. Pickup the tone they use and match with the writing. Follow this exact format and structure:
+            const prompt = `You are a Bio Summary Writer, focus on creating only 1 vairation of bio profile for Malaysia influencer based on the information provided by user. Create the profile Bio in 40 to 60 words. Do not use em dash. Detect user language and write the bio in the language. Pickup the tone they use and match with the writing. Include hobbies or achievements if available. Example 1:
+Hi I am ${creatorNameStr}, a lifestyle creator.
 
-"Hi I am [Name], a [Niche] creator.
+I am always hungry, always hunting 🕵️♂️✨. Documenting the unsung heroes of street food stalls and hidden cafe corners 🥡☕.
 
-[Short description based on their vibe, hobbies and topics, around 2-3 sentences. E.g., I am always hungry, always hunting 🕵️♂️✨. Documenting the unsung heroes of street food stalls and hidden cafe corners 🥡☕.]
-
-looking forward to partner with brands that value [Brand values based on their vibe, e.g., authentic storytelling, and family-friendly content]."
-
-Use the name "${creatorNameStr}" for [Name].
+looking forward to partner with brands that value authentic storytelling, and family-friendly content.
 
 User Description: ${answers.desc}
 Hobbies: ${answers.hobbies}

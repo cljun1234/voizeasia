@@ -476,7 +476,10 @@
                         <label><input type="checkbox" name="niche" value="Fitness"> Fitness</label>
                         <label><input type="checkbox" name="niche" value="Entertainment"> Entertainment</label>
                         <label><input type="checkbox" name="niche" value="Education"> Education</label>
-                        <label><input type="checkbox" name="niche" value="Others"> Others</label>
+                        <label><input type="checkbox" name="niche" value="Others" id="nicheOthersCheckbox"> Others</label>
+                    </div>
+                    <div id="nicheOthersInputContainer" class="hidden" style="margin-top: 10px;">
+                        <input type="text" id="nicheOthersInput" placeholder="Please specify your niche">
                     </div>
                 </div>
 
@@ -485,8 +488,11 @@
                     <div class="checkbox-group" id="languageGroup">
                         <label><input type="checkbox" name="language" value="Malay"> Malay</label>
                         <label><input type="checkbox" name="language" value="English"> English</label>
-                        <label><input type="checkbox" name="language" value="Mixed"> Mixed (Malay & English / English & Mandarin)</label>
+                        <label><input type="checkbox" name="language" value="Mixed" id="languageMixedCheckbox"> Mixed (Malay & English / English & Mandarin)</label>
                         <label><input type="checkbox" name="language" value="Mandarin"> Mandarin</label>
+                    </div>
+                    <div id="languageMixedInputContainer" class="hidden" style="margin-top: 10px;">
+                        <input type="text" id="languageMixedInput" placeholder="Please specify mixed languages">
                     </div>
                 </div>
 
@@ -586,6 +592,30 @@
 
         // --- Event Listeners ---
         document.addEventListener('DOMContentLoaded', () => {
+            // Mixed Language Input Handling
+            const languageMixedCheckbox = document.getElementById('languageMixedCheckbox');
+            const languageMixedInputContainer = document.getElementById('languageMixedInputContainer');
+
+            languageMixedCheckbox.addEventListener('change', (e) => {
+                if(e.target.checked) {
+                    languageMixedInputContainer.classList.remove('hidden');
+                } else {
+                    languageMixedInputContainer.classList.add('hidden');
+                }
+            });
+
+            // Others Niche Input Handling
+            const nicheOthersCheckbox = document.getElementById('nicheOthersCheckbox');
+            const nicheOthersInputContainer = document.getElementById('nicheOthersInputContainer');
+
+            nicheOthersCheckbox.addEventListener('change', (e) => {
+                if(e.target.checked) {
+                    nicheOthersInputContainer.classList.remove('hidden');
+                } else {
+                    nicheOthersInputContainer.classList.add('hidden');
+                }
+            });
+
             // Profile Picture Handling
             const profileInput = document.getElementById('profilePicture');
             profileInput.addEventListener('change', handleImageUpload);
@@ -756,7 +786,16 @@
                 vibe: document.getElementById('q4').value
             };
 
-            const prompt = `You are a Bio Summary Writer, focus on creating only 1 vairation of bio profile for Malaysia influencer based on the information provided by user. Create the profile Bio in 40 to 60 words. Do not use em dash. Detect user language and write the bio in the language. Pickup the tone they use and match with the writing. Include hobbies or achievements if available. Example 1: Hey, I'm Sarah! 🌸 I'm that girl who turns everyday moments into dreamy pastel aesthetics—think soft morning routines, cozy café corners, and budget-friendly home styling. My followers trust my honest reviews because I only share what genuinely fits my vibe. When I'm not filming, you'll find me thrifting for vintage finds or experimenting with latte art (still mastering that heart shape! ☕). Let's create something beautiful together, I bring authentic engagement and a feed that feels like a warm hug. 💕
+            const creatorNameStr = document.getElementById('fullName').value || 'there';
+            const prompt = `You are a Bio Summary Writer, focus on creating only 1 variation of bio profile for Malaysia influencer based on the information provided by user. Detect user language and write the bio in the language. Pickup the tone they use and match with the writing. Follow this exact format and structure:
+
+"Hi I am [Name], a [Niche] creator.
+
+[Short description based on their vibe, hobbies and topics, around 2-3 sentences. E.g., I am always hungry, always hunting 🕵️♂️✨. Documenting the unsung heroes of street food stalls and hidden cafe corners 🥡☕.]
+
+looking forward to partner with brands that value [Brand values based on their vibe, e.g., authentic storytelling, and family-friendly content]."
+
+Use the name "${creatorNameStr}" for [Name].
 
 User Description: ${answers.desc}
 Hobbies: ${answers.hobbies}
@@ -876,8 +915,8 @@ Provide ONLY the bio. Do not include extra text.`;
                     tiktokLink: document.getElementById('tiktokLink').value,
                     instagramLink: document.getElementById('instagramLink').value,
                     otherLink: document.getElementById('otherLink').value,
-                    nicheCategories: getCheckedValues('niche'),
-                    languages: getCheckedValues('language'),
+                    nicheCategories: getCheckedValues('niche').map(val => val === 'Others' ? (document.getElementById('nicheOthersInput').value || 'Others') : val),
+                    languages: getCheckedValues('language').map(val => val === 'Mixed' ? (document.getElementById('languageMixedInput').value || 'Mixed') : val),
                     manager: document.getElementById('manager').value
                 },
                 personality: {
